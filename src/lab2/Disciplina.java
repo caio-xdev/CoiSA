@@ -3,14 +3,15 @@ package lab2;
 import java.util.Arrays;
 
 public class Disciplina {
+    // Sugiro comentar as partes esseciais, como "Atributos" aqui!
     private String nomeDisciplina;
     private int horasEstudo = 0;
     private double[] notas = new double[4];
-
+    // Construtor
     public Disciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
     }
-
+    // Métodos
     public void cadastraHoras(int horas) {
         this.horasEstudo += horas;
     }
@@ -33,6 +34,7 @@ public class Disciplina {
         return calculaMedia() >= 7.0;
     }
 
+    @Override
     public String toString() {
         return this.nomeDisciplina + " " + this.horasEstudo + " " + calculaMedia() + " " + Arrays.toString(this.notas);
     }

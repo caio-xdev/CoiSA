@@ -1,29 +1,28 @@
 package lab2;
 
-public class RegistroTempoOnline {
-    private String nomeDisciplina;
-    private int tempoOnlineEsperado;
-    private int tempoAdicionado = 0;
+public class Descanso {
+    private int horasDescanso;
+    private int numeroSemanas;
 
-    public RegistroTempoOnline(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.tempoOnlineEsperado = 120;
+    public Descanso() {
+        this.horasDescanso = 0;
+        this.numeroSemanas = 1;
     }
 
-    public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.tempoOnlineEsperado = tempoOnlineEsperado;
+    public void defineHorasDescanso(int valor) {
+        this.horasDescanso = valor;
     }
 
-    public void adicionaTempoOnline(int tempo) {
-        this.tempoAdicionado += tempo;
+    public void defineNumeroSemanas(int valor) {
+        if (valor > 0) {
+            this.numeroSemanas = valor;
+        }
     }
 
-    public boolean atingiuMetaTempoOnline() {
-        return this.tempoAdicionado >= this.tempoOnlineEsperado;
-    }
-
-    public String toString() {
-        return this.nomeDisciplina + " " + this.tempoAdicionado + "/" + this.tempoOnlineEsperado;
+    public String getStatusGeral() {
+        if (this.numeroSemanas > 0 && (this.horasDescanso / this.numeroSemanas) >= 26) {
+            return "descansado";
+        }
+        return "cansado";
     }
 }
