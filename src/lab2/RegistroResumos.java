@@ -52,6 +52,9 @@ public class RegistroResumos {
         }
         return sb.toString();
     }
+    public String[] busca(String chaveDeBusca){
+        return
+    }
 
     public boolean temResumo(String tema) {
         for (int i = 0; i < this.totalCadastrados; i++) {
